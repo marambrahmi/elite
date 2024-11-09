@@ -14,11 +14,6 @@ public class UserServiceImplmnt implements UserServiceInterface{
 
     @Autowired
     private UserRepository UsrRepo;
-
-    @Override
-    public List<User> getAllUtilisateur() {
-    return UsrRepo.findAll();
-    }
     
     @Override
     //please make sure to name the entity "User" so the code recognize it and most of the red underlined User will be gone

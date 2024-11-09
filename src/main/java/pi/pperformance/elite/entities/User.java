@@ -6,8 +6,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+//instead of this importation for the date attribute, I used this so the database can store it from the JSON file: import java.sql.Date; 
+import java.util.Date; 
 
-import java.sql.Date;
 
 
 @Entity
@@ -22,8 +24,20 @@ private String email;
 private Date birthDate;
 private String role;
 private String password;
+//to avoid adding this attribute to the database
+@Transient
 private String confirm_password;
 
+
+//the enttity constructor
+public User(String FN, String LN, String mail, String role, String pwd){
+    this.first_name=FN;
+    this.last_name=LN;
+    this.email=mail;
+    this.role=role;
+    this.password = pwd;
+    this.birthDate = new Date();
+}
 public void setId(Long id) {
     this.id = id;
 }
