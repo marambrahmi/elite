@@ -5,8 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pi.pperformance.elite.UserServices.UserServiceInterface;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import pi.pperformance.elite.entities.User;
 
 
 @RestController
@@ -22,5 +24,6 @@ public class UserController {
     public User AddUser (@RequestBody User user) {
         return usrService.addUser(user);
     }
+    
     
 }
